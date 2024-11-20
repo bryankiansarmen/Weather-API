@@ -4,9 +4,7 @@ import com.example.weather_api.model.Weather;
 import com.example.weather_api.service.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api/v1/weather")
 @RestController
@@ -18,8 +16,8 @@ public class WeatherController {
         this.weatherService = weatherService;
     }
 
-    @GetMapping
-    public ResponseEntity<Weather> getWeather() {
-        return ResponseEntity.ok(weatherService.getWeather());
+    @GetMapping("{country}")
+    public ResponseEntity<Weather> getWeather(@PathVariable String country) {
+        return ResponseEntity.ok(weatherService.getWeather(country));
     }
 }
