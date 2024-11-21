@@ -1,6 +1,8 @@
 package com.example.weather_api.model;
 
-public class WeatherLocation {
+import java.io.Serializable;
+
+public class WeatherLocation implements Serializable {
     private String name;
     private String region;
     private String country;
