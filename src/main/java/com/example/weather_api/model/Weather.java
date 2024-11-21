@@ -1,6 +1,8 @@
 package com.example.weather_api.model;
 
-public class Weather {
+import java.io.Serializable;
+
+public class Weather implements Serializable {
     private WeatherLocation location;
     private WeatherCurrent current;
 

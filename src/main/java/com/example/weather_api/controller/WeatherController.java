@@ -3,6 +3,7 @@ package com.example.weather_api.controller;
 import com.example.weather_api.model.Weather;
 import com.example.weather_api.service.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

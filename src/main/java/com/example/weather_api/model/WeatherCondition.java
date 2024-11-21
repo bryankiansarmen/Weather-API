@@ -1,6 +1,8 @@
 package com.example.weather_api.model;
 
-public class WeatherCondition {
+import java.io.Serializable;
+
+public class WeatherCondition implements Serializable {
     private String text;
     private String icon;
     private int code;

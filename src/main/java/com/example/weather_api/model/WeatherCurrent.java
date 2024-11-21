@@ -1,6 +1,8 @@
 package com.example.weather_api.model;
 
-public class WeatherCurrent {
+import java.io.Serializable;
+
+public class WeatherCurrent implements Serializable {
     private Long last_updated_epoch;
     private String last_updated;
     private Double temp_c;
