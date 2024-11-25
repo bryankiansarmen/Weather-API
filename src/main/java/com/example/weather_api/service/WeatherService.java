@@ -3,13 +3,11 @@ package com.example.weather_api.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-@PropertySource("classpath:env.properties")
 public class WeatherService {
     @Value("${API_KEY}")
     private String key;
