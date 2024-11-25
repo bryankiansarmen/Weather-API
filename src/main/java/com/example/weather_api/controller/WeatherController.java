@@ -1,10 +1,7 @@
 package com.example.weather_api.controller;
 
-import com.example.weather_api.model.Weather;
 import com.example.weather_api.service.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api/v1/weather")
@@ -18,7 +15,7 @@ public class WeatherController {
     }
 
     @GetMapping("{country}")
-    public ResponseEntity<Weather> getWeather(@PathVariable String country) {
-        return ResponseEntity.ok(weatherService.getWeather(country));
+    public Object getWeather(@PathVariable String country) {
+        return weatherService.getWeather(country);
     }
 }
