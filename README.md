@@ -58,11 +58,11 @@ curl "http://127.0.0.1:8000/London?start=2024-08-01&end=2024-08-15"
 ```
 
 ## Request Parameters:
-> * location (required): The name of the location (e.g., "London").
-> * start (optional): The start date for the forecast (e.g., "2024-08-01").
-> * end (optional): The end date for the forecast (e.g., "2024-08-15").
+* location (required): The name of the location (e.g., "London").
+* start (optional): The start date for the forecast (e.g., "2024-08-01").
+* end (optional): The end date for the forecast (e.g., "2024-08-15").
 
 ## Notes
-Ensure Redis is running and accessible.
-Use a valid API key from the Free Weather API provider.
-Adjust environment variables as needed for production environments.
+* Ensure Redis is running and accessible.
+* Use a valid API key from the Free Weather API provider.
+* Adjust environment variables as needed for production environments.
