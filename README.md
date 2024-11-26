@@ -54,7 +54,7 @@ The server will run on port 8000 by default.
 Example API Request
 To fetch weather data for London with optional start and end dates, use the following:
 ```
-curl "http://127.0.0.1:8000/London?start=2024-08-01&end=2024-08-15"
+curl "http://127.0.0.1:8000/api/v1/weather/London"
 ```
 
 ## Request Parameters:
