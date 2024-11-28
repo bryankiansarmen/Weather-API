@@ -4,7 +4,7 @@ import com.example.weather_api.service.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/api/v1/weather")
+@RequestMapping("/api/v1")
 @RestController
 public class WeatherController {
     private final WeatherService weatherService;
@@ -14,8 +14,12 @@ public class WeatherController {
         this.weatherService = weatherService;
     }
 
-    @GetMapping("{country}")
-    public Object getWeather(@PathVariable String country) {
-        return weatherService.getWeather(country);
+    @GetMapping("/weather")
+    public Object getWeather(@RequestParam String location, @RequestParam(required = false) Integer day) {
+        if (day == null) {
+            return weatherService.getWeather(location);
+        }
+
+        return weatherService.getForecastWeather(location, day);
     }
 }

@@ -20,9 +20,17 @@ public class WeatherService {
     }
 
 
-    @Cacheable(value = "weather", key = "#country")
-    public Object getWeather(String country) {
-        String url = "https://api.weatherapi.com/v1/current.json?key=" + key +"&q=" + country;
+    @Cacheable(value = "weather", key = "#location")
+    public Object getWeather(String location) {
+        String url = "https://api.weatherapi.com/v1/current.json?key=" + key +"&q=" + location;
+        ResponseEntity<Object> response = restTemplate.getForEntity(url, Object.class);
+
+        return response.getBody();
+    }
+
+    @Cacheable(value = "forecast-weather", key = "#location")
+    public Object getForecastWeather(String location, int day) {
+        String url = "https://api.weatherapi.com/v1/forecast.json?key=" + key + "&q=" + location + "&days=" + day;
         ResponseEntity<Object> response = restTemplate.getForEntity(url, Object.class);
 
         return response.getBody();

@@ -54,11 +54,12 @@ The server will run on port 8000 by default.
 Example API Request
 To fetch weather data for London with optional start and end dates, use the following:
 ```
-curl "http://127.0.0.1:8000/api/v1/weather/London"
+curl "http://127.0.0.1:8000/api/v1/weather?location=london&day=3"
 ```
 
 ## Request Parameters:
 * location (required): The name of the location (e.g., "London").
+* day (optional): The day of the forecast (e.g., "3 days").
 
 ## Notes
 * Ensure Redis is running and accessible.
