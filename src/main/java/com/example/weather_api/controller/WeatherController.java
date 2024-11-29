@@ -15,11 +15,11 @@ public class WeatherController {
     }
 
     @GetMapping("/weather")
-    public Object getWeather(@RequestParam String location, @RequestParam(required = false) Integer day) {
-        if (day == null) {
+    public Object getWeather(@RequestParam String location, @RequestParam(required = false) Integer days) {
+        if (days == null) {
             return weatherService.getWeather(location);
         }
 
-        return weatherService.getForecastWeather(location, day);
+        return weatherService.getForecastWeather(location, days);
     }
 }
