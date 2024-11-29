@@ -29,8 +29,8 @@ public class WeatherService {
     }
 
     @Cacheable(value = "forecast-weather", key = "#location")
-    public Object getForecastWeather(String location, int day) {
-        String url = "https://api.weatherapi.com/v1/forecast.json?key=" + key + "&q=" + location + "&days=" + day;
+    public Object getForecastWeather(String location, int days) {
+        String url = "https://api.weatherapi.com/v1/forecast.json?key=" + key + "&q=" + location + "&days=" + days;
         ResponseEntity<Object> response = restTemplate.getForEntity(url, Object.class);
 
         return response.getBody();
