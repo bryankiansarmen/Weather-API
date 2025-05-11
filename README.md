@@ -1,4 +1,4 @@
-# Weather API with Spring Boot, Redis, and Rate Limiting Filter
+# Weather API with Spring Boot, Redis, and Rate Limiting Filter Edit
 
 This project is a Spring Boot web application designed to fetch weather data for a given location from the **Free Weather API**. It incorporates **Redis** for caching and a **Rate Limiting Filter** to enhance performance and prevent abuse.
 
